@@ -34,3 +34,6 @@ jobs:
         echo AHOJ
         pwd
         ls -la
+        west help
+        west init
+        ls -la
