@@ -48,6 +48,12 @@ RUN \
   && python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
+RUN \
+  echo pwd
+  west init
+  cd zephyr
+  west update hal_nxp
+
 # West
 
 RUN pip install --no-cache-dir wheel west
