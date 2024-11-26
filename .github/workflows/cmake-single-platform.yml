@@ -26,8 +26,8 @@ jobs:
       run: |
         cmake --version
         python3 --version
-        dtc --version
         sudo apt-get install device-tree-compiler
+        dtc --version
         echo "Hotovo"
         west init
 
