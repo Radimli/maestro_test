@@ -1,6 +1,7 @@
 name: Conditional env variable
 
-on: workflow_dispatch
+on:
+    workflow_dispatch
 
 env:
   DAY_OF_WEEK: Monday
@@ -13,6 +14,7 @@ jobs:
     steps:
       - name: "Say Hello Mona it's Monday"
         if: ${{ env.DAY_OF_WEEK == 'Monday' }}
-        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK! ${{ github.repository }}"
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK! Path is $MYPATH"
         env:
+          MYPATH: ${{ github.repository }}
           First_Name: Mona
