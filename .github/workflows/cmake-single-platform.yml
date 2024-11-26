@@ -29,7 +29,11 @@ jobs:
         sudo apt-get install device-tree-compiler
         dtc --version
         echo "Hotovo"
+        pip install west
+        pwd
+        ls -la
         west init
+        ls -la
 
    # - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
