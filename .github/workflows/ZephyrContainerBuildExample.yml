@@ -19,14 +19,14 @@ jobs:
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/beriberikix/zephyr:arm-0.16.4sdk
+      image: ghcr.io/radimli/maestro_test:main
         #username: ${{ github.actor }}
         #password: ${{ secrets.PRIVATE_ACCESS_TOKEN }}
 
     steps:
     - uses: actions/checkout@v4
 
-    - name: Say Hello from container
+    - name: Say Hello from container and build an example
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       run: |
@@ -35,5 +35,6 @@ jobs:
         pwd
         ls -la
         west help
-        west init
+        cd zephyr
+        west build -b rd_rw612_bga samples/hello_world -p
         ls -la
