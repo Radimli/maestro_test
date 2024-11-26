@@ -1,7 +1,6 @@
 name: Conditional env variable
 
-on:
-    workflow_dispatch
+on: [workflow_dispatch, push]
 
 env:
   DAY_OF_WEEK: Monday
