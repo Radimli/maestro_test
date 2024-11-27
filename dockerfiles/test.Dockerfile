@@ -49,6 +49,7 @@ RUN \
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 RUN \
+  pip install west
   echo pwd
   west init
   cd zephyr
