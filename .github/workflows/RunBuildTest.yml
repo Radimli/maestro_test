@@ -13,14 +13,6 @@ on:
     workflows: ["Docker image update"]
     branches:
       - 'main'
-
-  workflow_call:
-    inputs:
-      mojemoje:
-        description: 'neco'
-        default: 'aha'
-        required: false
-        type: string
     
   workflow_dispatch:
     inputs:
