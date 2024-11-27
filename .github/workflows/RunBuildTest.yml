@@ -1,6 +1,6 @@
 # Simple build test in docker environment
 name: Build test 
-run-name: Build test for @${{ inputs.platform }} run by @${{ github.actor }}
+run-name: Build test run by @${{ github.actor }}
 
 on:
   push:
