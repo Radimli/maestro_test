@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
     inputs:
       platform:
-        description 'Platform to run tests for'
+        description: 'Platform to run tests for'
         required: false
         default: 'rd_rw612_bga'
         type: string
