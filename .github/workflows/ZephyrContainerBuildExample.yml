@@ -31,7 +31,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/radimli/maestro_test:main
-      volumes: ${{ github.workspace }}:/app
+      volumes: 
+        - ${{ github.workspace }}:/app
         #username: ${{ github.actor }}
         #password: ${{ secrets.PRIVATE_ACCESS_TOKEN }}
 
