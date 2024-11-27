@@ -1,0 +1,57 @@
+# Simple build test in docker environment
+name: Build test 
+run-name: Build test for @${{ inputs.platform }} run by @${{ github.actor }}
+
+on:
+  push:
+    branches: [ "main" ]
+
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_run:
+    workflows: ["Docker image update"]
+    branches:
+      - 'main'
+    
+  workflow_dispatch:
+    inputs:
+      platform:
+        description 'Platform to run tests for'
+        required: false
+        default: 'rd_rw612_bga'
+        type: string
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/radimli/maestro_test:main
+      volumes: 
+        # TODO: Copy into the container instead?
+        - ${{ github.workspace }}:/app
+        #username: ${{ github.actor }}
+        #password: ${{ secrets.PRIVATE_ACCESS_TOKEN }}
+
+    steps:
+    - name: Checkout
+    - uses: actions/checkout@v4
+
+    - name: Initialize west
+      run: |
+        cd /app
+        west init -l .
+        west update
+
+    - name: Execute build tests
+      run: |
+        west twister --verbose --platform @${{ inputs.platform }} --integration --build-only --testsuite-root ../
