@@ -31,6 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/radimli/maestro_test:main
+      volumes: ${{ github.workspace }}:/app
         #username: ${{ github.actor }}
         #password: ${{ secrets.PRIVATE_ACCESS_TOKEN }}
 
@@ -42,6 +43,7 @@ jobs:
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       run: |
         pwd
+        ls /app
         ls -la
         west help
         cd zephyr
