@@ -52,5 +52,5 @@ jobs:
         context: .
         file: dockerfiles/test.Dockerfile
         push: true
-        tags: ${{ steps.meta.outputs.tags }}
+        tags: 'latest'
         labels: ${{ steps.meta.outputs.labels }}
