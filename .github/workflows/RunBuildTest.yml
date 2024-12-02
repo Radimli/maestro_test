@@ -38,7 +38,7 @@ jobs:
       image: ghcr.io/radimli/maestro_test:main
       volumes: 
         # TODO: Copy into the container instead?
-        - ${{ github.workspace }}:/app
+        - ${{ github.workspace }}:/app/maestro
         #username: ${{ github.actor }}
         #password: ${{ secrets.PRIVATE_ACCESS_TOKEN }}
 
@@ -48,7 +48,7 @@ jobs:
 
     - name: Initialize west
       run: |
-        cd /app
+        cd /app/maestro
         pwd
         ls -la
         west init -l . --mf west-freestanding.yml
