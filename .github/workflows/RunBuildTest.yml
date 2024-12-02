@@ -49,7 +49,7 @@ jobs:
     - name: Initialize west
       run: |
         cd /app
-        west init -l .
+        west init -l . --mf west-freestanding.yml
         west update
 
     - name: Execute build tests
