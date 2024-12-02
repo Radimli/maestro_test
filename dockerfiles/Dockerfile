@@ -54,9 +54,9 @@ RUN pip install --no-cache-dir wheel west pyelftools
 
 # Zephyr
 
-RUN \
-  west init \
-  && cd zephyr \
-  && west update hal_nxp \
-  && west update cmsis
+#RUN \
+#  west init \
+#  && cd zephyr \
+#  && west update hal_nxp \
+#  && west update cmsis
 
