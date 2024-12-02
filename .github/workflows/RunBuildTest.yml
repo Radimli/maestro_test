@@ -49,6 +49,8 @@ jobs:
     - name: Initialize west
       run: |
         cd /app
+        pwd
+        ls -la
         west init -l . --mf west-freestanding.yml
         west update
 
