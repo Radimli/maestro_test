@@ -56,6 +56,7 @@ jobs:
 
     - name: Execute build tests
       run: |
+        cd /app/maestro
         ls -la
         west --version
         west list -a
