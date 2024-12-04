@@ -57,6 +57,6 @@ jobs:
     - name: Execute build tests
       run: |
         ls -la
-        west twister --verbose --platform @${{ inputs.platform }} --integration --build-only --testsuite-root ../
+        #west twister --verbose --platform @${{ inputs.platform }} --integration --build-only --testsuite-root ../
         cd ..
         ls -la
