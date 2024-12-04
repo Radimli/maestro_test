@@ -60,6 +60,6 @@ jobs:
         ls -la
         west --version
         west list -a
-        #west twister --verbose --platform @${{ inputs.platform }} --integration --build-only --testsuite-root ../
+        west twister --verbose --platform @${{ inputs.platform }} --integration --build-only --testsuite-root .
         cd ..
         ls -la
