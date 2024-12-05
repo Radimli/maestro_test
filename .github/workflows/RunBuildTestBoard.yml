@@ -7,7 +7,7 @@ on:
     inputs:
       platform:
         description: 'Platform to run tests for'
-        required: false
+        required: true
         default: 'rd_rw612_bga'
         type: string
 
