@@ -50,7 +50,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # West
 
-RUN pip install --no-cache-dir wheel west pyelftools anytree psutil pyserial natsort
+RUN pip install --no-cache-dir wheel west pyelftools anytree psutil pyserial natsort pytest
 
 # Zephyr
 
