@@ -1,7 +1,7 @@
 FROM debian:stable-slim
 
 ARG ZEPHYR_SDK_VERSION=0.16.4
-ARG ZEPHYR_SDK_INSTALL_DIR=/opt/toolchains/zephyr-sdk-${ZEPHYR_SDK_VERSION}
+ARG ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk-${ZEPHYR_SDK_VERSION}
 ARG ZEPHYR_SDK_TOOLCHAINS="-t arm-zephyr-eabi"
 
 # OS dependencies and packages
