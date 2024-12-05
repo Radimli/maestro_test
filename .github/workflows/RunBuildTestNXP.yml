@@ -37,11 +37,7 @@ jobs:
       uses: actions/upload-artifact@v4.4.3
       with: 
         path: |
-          - /app/maestro/zephyr/twister-out/testplan.json
-          - /app/maestro/zephyr/twister-out/twister.json
-          - /app/maestro/zephyr/twister-out/twister.log
-          - /app/maestro/zephyr/twister-out/twister.xml
-          - /app/maestro/zephyr/twister-out/twister_report.xml
-          - /app/maestro/zephyr/twister-out/twister_suite_report.xml
-          - /app/commandlinelog.txt
+          /app/maestro/zephyr/twister-out/*.json
+          /app/maestro/zephyr/twister-out/*.xml
+          /app/commandlinelog.txt
         
