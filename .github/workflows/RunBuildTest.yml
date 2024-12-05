@@ -55,5 +55,12 @@ jobs:
     - name: Execute build tests
       run: |
         cd /app/maestro/zephyr
-        # west twister --verbose --platform @${{ inputs.platform }} --integration --build-only --testsuite-root ../
-        west twister --verbose --verbose --verbose --platform rd_rw612_bga --integration --build-only --testsuite-root .
+        west twister --verbose --verbose --verbose --platform rd_rw612_bga --integration --build-only --testsuite-root . | tee /app/buildLog.txt
+
+    - name: Upload artefacts
+      uses: actions/upload-artifact@v4.4.3
+      with: 
+        path: |
+          /app/maestro/zephyr/twister-out/*.json
+          /app/maestro/zephyr/twister-out/*.xml
+          /app/buildLog.txt
