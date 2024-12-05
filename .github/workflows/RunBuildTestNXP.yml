@@ -30,12 +30,14 @@ jobs:
         cd /app/maestro/zephyr
         # west twister --verbose --platform @${{ inputs.platform }} --integration --build-only --testsuite-root ../
         west twister --verbose --platform rd_rw612_bga --integration --build-only --testsuite-root ./tests/memToMem | tee /app/buildLog.txt
-        # west twister --verbose --verbose --verbose --vendor=nxp --integration --build-only --testsuite-root ./tests/memToMem | tee /app/buildLog.txt
+        # west twister --verbose --verbose --verbose --vendor=nxp --integration --build-only --testsuite-root ./ | tee /app/buildLog.txt
         ls /app/maestro/zephyr/twister-out/
 
     - name: Upload artefacts
       uses: actions/upload-artifact@v4.4.3
-      with:
-        path: /app/maestro/zephyr/twister-out/*.txt
-      
+      with: 
+        path: |
+          - /app/maestro/zephyr/twister-out/*.json
+          - /app/maestro/zephyr/twister-out/*.xml
+          - /app/commandlinelog.txt
         
