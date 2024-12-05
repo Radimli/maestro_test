@@ -49,20 +49,11 @@ jobs:
     - name: Initialize west
       run: |
         cd /app/maestro
-        pwd
-        ls -la
         west init -l . --mf west-freestanding.yml
         west update
 
     - name: Execute build tests
       run: |
-        cd /app/maestro
-        ls -la
-        west --version
-        cd zephyr
-        # west list -a
-        # west twister --verbose --platform @${{ inputs.platform }} --integration --build-only --testsuite-root ../
-        west help twister
-        west twister --verbose --verbose --verbose --platform rd_rw612_bga --integration --build-only --testsuite-root .
-        cd ..
-        ls -la
+        cd /app/maestro/zephyr
+        west twister --verbose --platform @${{ inputs.platform }} --integration --build-only --testsuite-root ../
+        # west twister --verbose --verbose --verbose --platform rd_rw612_bga --integration --build-only --testsuite-root .
