@@ -35,7 +35,7 @@ jobs:
     - name: Execute build tests
       run: |
         cd /app/maestro/zephyr
-        west twister --verbose --verbose --verbose --platform @${{ inputs.platform }} --build-only --testsuite-root ../ | tee /app/buildLog.txt
+        west twister --verbose --verbose --verbose --platform ${{ inputs.platform }} --build-only --testsuite-root ../ | tee /app/buildLog.txt
 
     - name: Upload artefacts
       uses: actions/upload-artifact@v4.4.3
