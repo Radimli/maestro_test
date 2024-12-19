@@ -9,7 +9,7 @@ The processing blocks can include (but are not limited to) different audio sourc
 
 ![maestro overview](doxygen/common/maestroApp.svg)
 
-\*not all elements and libraries are supported in Zephyr port. For more information, see [Maestro on Zephyr](zephyr/doc/doc/README.html)
+\*not all elements and libraries are supported in Zephyr port. For more information, see [Maestro on Zephyr](zephyr/README.rst)
 
 The Maestro audio framework is an open-source component developed by NXP Semiconductors and released under the BSD-compatible license. It is running on RTOS (Zephyr or FreeRTOS), abstracted by OSA layer.
 
@@ -19,11 +19,11 @@ To see what is new, see [changelog](CHANGELOG.md).
 
 ## Maestro on Zephyr
 
-Getting started guide and further information for Maestro on Zephyr may be found [here](zephyr/doc/doc/README.html).
+Getting started guide and further information for Maestro on Zephyr may be found [here](zephyr/README.rst).
 
 ## Maestro on FreeRTOS
 
-Maestro on FreeRTOS is supported in NXP's SDK. To get started, see [mcux-sdk repository](https://github.com/nxp-mcuxpresso/mcux-sdk).
+Maestro on FreeRTOS is supported in NXP's SDK. To get started, see [mcuxsdk repository](https://github.com/nxp-mcuxpresso/mcuxsdk-manifests).
 
 ### Supported examples {#supported-examples}
 

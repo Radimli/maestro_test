@@ -6,7 +6,7 @@ Maestro on Zephyr
 #################
 * Based on and tested with Zephyr version, given by tag v4.0.0
 * Tested with Zephyr SDK version 16.4
-* Generated documentation with Sphinx: `README <doc/build/README.html>`_
+* To see the pre-built documentation, see: `README.html <doc/doc/README.html>`_. Also see the :ref:`documentation section <documentation>`.
 
 .. toctree::
    :glob:
@@ -228,13 +228,17 @@ When creating your own example from scratch, set ``CONFIG_MAESTRO_AUDIO_FRAMEWOR
 However, the recommended way to edit config options is to open gui-config (or menuconfig) by calling ``west build -t guiconfig``.
 Then you can use the graphical interface to interactively turn on/off the features you need.
 
+.. _documentation:
+
 **************
 Documentation
 **************
 
-This documentation is generated using Sphinx. To generate the documentation in HTML, install Sphinx first. Tested with ``sphinx-build 8.1.3``.
+Please note, Maestro documentation is under reconstruction. It is currently mixing several tools and formats.
 
-Go under ``zephyr/doc`` folder and execute ``make html``. Open ``doc/build/html/README.hml`` afterwards.
+To see the pre-generated Maestro Zephyr documentation, see ``zephyr/doc/doc/README.html``
+
+To generate the Zephyr documentation, go under ``zephyr/doc`` folder and execute ``make html``. Sphinx version ``sphinx-build 8.1.3`` must be installed. Open ``doc/doc/html/README.hml`` afterwards.
 
 To see Maestro core documentation, go to the Maestro top directory and see ``README.md``.
 
